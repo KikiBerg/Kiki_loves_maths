@@ -5,6 +5,7 @@ body {
     font-family: "Raleway", sans-serif;
     color: #445361;
     text-align: center;
+    
 }
 
 /* --------- Heading */
@@ -31,12 +32,26 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Distribute space between children */
+}
+
+.controls-area {
+    width: 100%;
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Distribute buttons evenly */
+    margin-top: 30px;
 }
 
 .question-area {
-    width: 50%;
+    width: 100%;
     font-size: 2rem;
-    margin: auto;
+    display: flex; /* Use flexbox */
+    flex-direction: raw; /* Stack children horizontally */
+    justify-content: center;
+    align-items: center; /* Center children horizontally */
+    flex-wrap: wrap;
     padding: 50px 0;
 }
 
@@ -45,14 +60,11 @@ body {
 }
 
 .score-area {
-    margin: 5px auto;
-    width: 60%;
+    width: 100%;
     font-size: 1.2rem;
-}
-
-.controls-area {
-    width: 85%;
-    margin: 30px auto;
+    display: flex; /* Use flexbox */
+    justify-content: space-evenly; /* Distribute space between scores evenly */
+    margin-top: 5px;
 }
 
 #score {
@@ -80,14 +92,14 @@ body {
 }
 
 .scores {
-    display: inline-block;
+    /*display: inline-block;*/
     padding: 25px;
 }
 
 /* --------- Buttons */
 
 .btn {
-    width: 220px;
+    width: 100px;
     height: 60px;
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
@@ -164,6 +176,7 @@ body {
 }
 
 .btn--gray {
+    align-self: center;
     margin-top: 25px;
     background-color: #445361;
     border: 1px transparent;
@@ -179,11 +192,12 @@ body {
 
 @media (max-width: 414px) {
     .controls-area {
-        width: 100%;
+        flex-direction: raw; /* Stack buttons horisontally */
+        margin-top: 10px;
     }
 
     .btn--big {
-        margin: 0 10px;
+        margin: 10px auto; /* Center buttons */
         padding: 5px;
         border: 5px solid;
         width: 50px;
@@ -198,7 +212,7 @@ body {
 
     .question-area {
         padding: 10% 0;
-        width: 100%;
+        /*width: 100%;*/
     }
 
     .question-area span {
@@ -218,12 +232,12 @@ body {
     }
 
     .score-area {
-        width: 100%;
+        flex-direction: row;        
     }
 
     .scores {
         margin: 0.5em auto;
-        display: block;
+        /*display: block;*/
         padding: 5px;
     }
 
